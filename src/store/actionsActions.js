@@ -1,8 +1,8 @@
 import { getData } from "./actions";
 export const fetchData = () => {
-  return (dispatch) => {
-    fetch('https://jsonplaceholder.typicode.com/todos/10')
-  .then(response => response.json())
-  .then(json => dispatch(getData(json)))  
+  return async (dispatch) => {
+    await fetch("https://jsonplaceholder.typicode.com/todos")
+      .then((response) => response.json())
+      .then((json) => dispatch(getData(json)));
   };
 };

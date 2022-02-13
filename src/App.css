@@ -34,8 +34,10 @@
 .content__main {
   width: 100%;
   height: calc(100vh - 100px);
-  background: red;
 }
-.content__main-header{
-    
+.content__main-header {
+  height: 100px;
+  background: green;
+}
+.content__main-section {
 }
