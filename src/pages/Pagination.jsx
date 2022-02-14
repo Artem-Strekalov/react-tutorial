@@ -25,7 +25,6 @@ const Pagination = () => {
   const countCountry = countries.slice(firstCountryIndex, lastCountryIndex);
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
   const nextPage = () => setCurrentPage((prev) => prev + 1);
   const prevPage = () => setCurrentPage((prev) => prev - 1);
 

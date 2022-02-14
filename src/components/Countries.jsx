@@ -2,7 +2,6 @@ import React from "react";
 
 const Countries = ({ countries, loading }) => {
   if (loading) {
-    console.log(countries);
     return <h2>Loading ...</h2>;
   }
   return (

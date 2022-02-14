@@ -7,9 +7,9 @@ const Pagin = ({ countriesPerPage, totalCountries, paginate }) => {
   return (
     <div>
       <ul className="pagination">
-        {pageNumbers.map((number) => {
+        {pageNumbers.map((number, i) => {
           return (
-            <li className="page-item">
+            <li className="page-item" key={i}>
               <a className="page-link" onClick={() => paginate(number)}>
                 {number}
               </a>
