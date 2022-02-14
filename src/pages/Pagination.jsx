@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import Countries from "../components/Countries";
 import Pagin from "../components/Pagin";
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const Pagination = () => {
   const [countries, setCountries] = useState([]);
