@@ -3,6 +3,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import Countries from "../components/Countries";
+import Pagin from "../components/Pagin";
 
 const Pagination = () => {
   const [countries, setCountries] = useState([]);
@@ -18,10 +19,31 @@ const Pagination = () => {
     };
     getCountries();
   }, []);
+
+  const lastCountryIndex = currentPage * countriesPerPage;
+  const firstCountryIndex = lastCountryIndex - countriesPerPage;
+  const countCountry = countries.slice(firstCountryIndex, lastCountryIndex);
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+  const nextPage = () => setCurrentPage((prev) => prev + 1);
+  const prevPage = () => setCurrentPage((prev) => prev - 1);
+
   return (
     <div className="container mt-5">
       <h1 className="text-primary">Countries</h1>
-      <Countries countries={countries} loading={loading} />
+      <Countries countries={countCountry} loading={loading} />
+      <Pagin
+        countriesPerPage={countriesPerPage}
+        totalCountries={countries.length}
+        paginate={paginate}
+      />
+      <button className="btn btn-primary" onClick={prevPage}>
+        Prev Page
+      </button>
+      <button className="btn btn-primary ms-2" onClick={nextPage}>
+        Next Page
+      </button>
     </div>
   );
 };

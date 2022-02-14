@@ -8,10 +8,17 @@ const Countries = ({ countries, loading }) => {
   return (
     <ul className="list-group mb-2">
       {countries.map((country, i) => {
-        <li className="list-group-item" key={i}>
-          {country.name.official}
-          <img src={country.flag} alt="" className="ml-2" />
-        </li>;
+        return (
+          <li className="list-group-item" key={i}>
+            {country.name.common}
+            <img
+              src={country.flags.png}
+              alt=""
+              className="ml-2"
+              style={{ width: "25px" }}
+            />
+          </li>
+        );
       })}
     </ul>
   );
